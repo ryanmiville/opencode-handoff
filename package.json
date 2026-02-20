@@ -1,8 +1,12 @@
 {
   "name": "opencode-handoff",
-  "module": "index.ts",
+  "module": "handoff.ts",
   "type": "module",
   "private": true,
+  "license": "MIT",
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },

@@ -1,34 +1,21 @@
 {
   "compilerOptions": {
-    // Environment setup & latest features
-    "lib": ["ESNext"],
     "target": "ESNext",
-    "module": "Preserve",
-    "moduleDetection": "force",
-    "jsx": "react-jsx",
-    "allowJs": true,
-
-    // Bundler mode
+    "module": "ESNext",
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "verbatimModuleSyntax": true,
-    "noEmit": true,
-
-    // Best practices
     "strict": true,
     "skipLibCheck": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedIndexedAccess": true,
-    "noImplicitOverride": true,
-
-    // Some stricter flags (disabled by default)
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "noPropertyAccessFromIndexSignature": false,
-
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "allowImportingTsExtensions": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "types": ["bun-types"],
     // Workaround: @opencode-ai/sdk exports point to ./dist/ but files are in ./dist/src/
     "paths": {
-      "@opencode-ai/sdk": ["./node_modules/@opencode-ai/sdk/dist/src/index"]
-    }
-  }
+      "@opencode-ai/sdk": ["./node_modules/@opencode-ai/sdk/dist/src/index"],
+    },
+  },
+  "include": ["handoff.ts"],
+  "exclude": ["node_modules"],
 }

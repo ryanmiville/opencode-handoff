@@ -1,15 +1,23 @@
 # opencode-handoff
 
-To install dependencies:
+A plugin + command that compacts the current session with goal-focused context, then immediately starts working on that goal.
 
-```bash
-bun install
+## Install
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/ryanmiville/opencode-handoff/main/install | bash
 ```
 
-To run:
+Installs:
+- `handoff.ts` to `~/.config/opencode/plugins/`
+- `handoff.md` to `~/.config/opencode/commands/`
 
-```bash
-bun run index.ts
-```
+Respects `$XDG_CONFIG_HOME`.
 
-This project was created using `bun init` in bun v1.3.9. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
+## Usage
+
+`/handoff <goal>`
+
+**Example:**
+
+`/handoff check if this bug exists anywhere else in the codebase`

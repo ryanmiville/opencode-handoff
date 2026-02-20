@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+set -e
+
+BASE_URL="https://raw.githubusercontent.com/ryanmiville/opencode-handoff/main"
+PLUGIN_DEST="${XDG_CONFIG_HOME:-$HOME/.config}/opencode/plugins"
+CMD_DEST="${XDG_CONFIG_HOME:-$HOME/.config}/opencode/commands"
+
+mkdir -p "$PLUGIN_DEST" "$CMD_DEST"
+
+download() {
+  url="$1"
+  dest="$2"
+  if command -v curl >/dev/null 2>&1; then
+    curl -fsSL "$url" -o "$dest"
+  else
+    echo "error: curl required" >&2
+    exit 1
+  fi
+}
+
+download "$BASE_URL/handoff.ts" "$PLUGIN_DEST/handoff.ts"
+echo "installed: $PLUGIN_DEST/handoff.ts"
+
+download "$BASE_URL/handoff.md" "$CMD_DEST/handoff.md"
+echo "installed: $CMD_DEST/handoff.md"
