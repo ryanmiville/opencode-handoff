@@ -1,0 +1,16 @@
+{
+  "name": "opencode-handoff",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@opencode-ai/plugin": "^1.2.9",
+    "@opencode-ai/sdk": "^1.2.9"
+  }
+}
